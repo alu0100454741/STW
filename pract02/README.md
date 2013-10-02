@@ -11,3 +11,5 @@ Once you have registered your application in twitter fill
 configure.rb.template with your Oauth data
 and rename it to configure.rb
 
+Esta en una aplicacion que hace consultas a Twitter, y segun el Usuario introducido te da el ultimo twett publicado.
+
