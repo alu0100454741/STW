@@ -31,10 +31,13 @@ class Twittapp
     EOS
     res.finish
   end
+  
+  def usuario_registrado?(user)
+    begin
+      Twitter.user_timeline(user).first.text
+      rescue "Error: ¡El usuario introducido no tiene una cuenta en Twitter!"
+    end
+  end
 end
 
-Rack::Server.start(
-  :app => Twittapp.new,
-  :Port => 8080,
-  :server => 'thin'
-)
+Rack::Server.start(:app => Twittapp.new,:Port => 8080,:server => 'thin')

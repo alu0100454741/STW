@@ -31,14 +31,6 @@ class Twittapp
     EOS
     res.finish
   end
-
-  def usuario_registrado?(user)
-    begin
-    	Twitter.user_timeline(user).first.text
-    	rescue
-      	"Este usuario no tiene cuenta en Twitter"
-    end
-  end
 end
 
 Rack::Server.start(
