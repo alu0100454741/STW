@@ -1,15 +1,10 @@
-Testing twitter
+Aplicación de Twitter
 ==============
 
-See:
+Usuario: Javier Mena Mena
+Facultad: Escuela Técnica de Ingenieria Informática de La Universidad de La Laguna.
 
-  *   http://sferik.github.io/twitter/
-  *   Register your application in twitter: https://dev.twitter.com/apps/new 
-  *   http://www.vogella.com/articles/Git/article.html
 
-Once you have registered your application in twitter fill 
-configure.rb.template with your Oauth data
-and rename it to configure.rb
+Esta en una aplicacion que hace consultas a Twitter, y segun el Usuario introducido te da el último twett publicado.
 
-Esta en una aplicacion que hace consultas a Twitter, y segun el Usuario introducido te da el ultimo twett publicado.
 
