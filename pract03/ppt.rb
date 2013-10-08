@@ -23,7 +23,7 @@ module RockPaperScissors
       
       computer_throw = @throws.sample
       player_throw = req.GET["choice"]
-      anwser = if !@throws.include?(player_throw)
+      answer = if !@throws.include?(player_throw)
           "Choose one of the following:"
         elsif player_throw == computer_throw
           "You tied with the computer"
