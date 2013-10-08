@@ -34,17 +34,25 @@ module RockPaperScissors
         end
 
       res = Rack::Response.new
-      res.write <<-"EOS"
-      <html>
-        <title>Practica 3_STW</title>
-        <body>
-          <h1>
-              #{anwser}
-              #{@choose}
-          </h1>
-        </body>
-      </html>
-      EOS
+      engine = Haml::Engine.new File.open("views/index.haml").read
+      res = Rack::Response.new 
+      res.write engine.render({}, 
+        :answer => answer, 
+        :choose => @choose,
+        :throws => @throws)
+      res.finish
+          
+#       res.write <<-"EOS"
+#       <html>
+#         <title>Practica 3_STW</title>
+#         <body>
+#           <h1>
+#               #{anwser}
+#               #{@choose}
+#           </h1>
+#         </body>
+#       </html>
+#       EOS
       res.finish
     end # call
   end   # App
