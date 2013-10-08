@@ -39,7 +39,9 @@ module RockPaperScissors
       res.write engine.render({}, 
         :answer => answer, 
         :choose => @choose,
-        :throws => @throws)
+        :throws => @throws,
+	:player_throw => player_throw,
+	:computer_throw => computer_throw)
       res.finish
           
 #       res.write <<-"EOS"
