@@ -1,7 +1,7 @@
 Aplicación de Twitter
 ==============
 
-Usuario: Javier Mena Mena
+Usuario: Javier Mena Mena<br>
 Facultad: Escuela Técnica de Ingenieria Informática de La Universidad de La Laguna.
 
 
