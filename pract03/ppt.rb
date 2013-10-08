@@ -35,7 +35,7 @@ module RockPaperScissors
 
       res = Rack::Response.new
       engine = Haml::Engine.new File.open("views/index.haml").read
-      res = Rack::Response.new 
+#       res = Rack::Response.new 
       res.write engine.render({}, 
         :answer => answer, 
         :choose => @choose,
