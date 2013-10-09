@@ -22,7 +22,7 @@ Instrucciones de Ejecución
 3. Seleccionamos una jugada y nos aparecera un mensaje de si hemos ganado, perdido o empatado.
 
 
----
+-------------
  
 Escuela Técnica Superior de Ingeniería Informática  
 Universidad de La Laguna
