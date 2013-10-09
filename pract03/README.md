@@ -19,7 +19,7 @@ Instrucciones de Ejecución
 
         $ http://localhost:9292
 
-3. Seleccionamos una jugada y nos aparecera un mensaje de si hemos ganado.
+3. Seleccionamos una jugada y nos aparecera un mensaje de si hemos ganado, perdido o empatado.
 
 
 ---
