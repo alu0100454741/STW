@@ -1,6 +1,6 @@
 desc "run the server"
 task :default do
-  sh "ruby ppt.rb"
+  sh "rackup"
 end
 
 desc "run the client with rock"
