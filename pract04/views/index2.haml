@@ -1,0 +1,74 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    %link{href: "/public/images/favicon.png", rel: "shortcut icon"}/
+    %title Off Canvas Template for Bootstrap
+    / Bootstrap core CSS
+    %link{href: "/public/assets/css/bootstrap.min.css", rel: "stylesheet"}/
+    / Custom styles for this template
+    %link{href: "/public/assets/css/offcanvas.css", rel: "stylesheet"}/
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+  %body
+    .navbar.navbar-fixed-top.navbar-inverse{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "#"} Juego-PPT
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{href: "#"} El Juego
+            %li
+              %a{href: "#about"} Reglas
+        / /.nav-collapse
+      / /.container
+    / /.navbar
+    .container
+      .col-xs-12.col-sm-12
+        %p.pull-right.visible-xs
+          %button.btn.btn-primary.btn-xs{"data-toggle" => "offcanvas", type: "button"} Toggle nav
+        .jumbotron
+          %h1 Bienvenido: Piedra, Papel o Tijera!
+          %p Piedra, papel o tijera es un juego infantil conocido también como cachipún, jankenpón, etc. Es un juego de manos en el cual existen tres elementos: la piedra, el papel y la tijera.
+        .col-6.col-sm-6.col-lg-4
+          %h2 Heading
+          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          %p
+            %a.btn.btn-default{href: "#"} View details »
+        / /span
+        .col-6.col-sm-6.col-lg-4
+          %h2 Heading
+          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          %p
+            %a.btn.btn-default{href: "#"} View details »
+        / /span
+        .col-6.col-sm-6.col-lg-4
+          %h2 Heading
+          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          %p
+            %a.btn.btn-default{href: "#"} View details »
+        / /span
+        / /span
+      %hr/
+      %footer
+        %br/
+        %br/
+        %p © Company 2013
+    / /.container
+    /
+      Bootstrap core JavaScript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{src: "/public/assets/js/assets/js/jquery.js"}
+    %script{src: "/public/assets/js/dist/js/bootstrap.min.js"}
+    %script{src: "/public/assets/js/ offcanvas.js"}
