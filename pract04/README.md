@@ -18,8 +18,8 @@ Instrucciones de Ejecución
         $ http://localhost:8080
 
 3. Seleccionamos una jugada y nos aparecera un mensaje de si hemos ganado, perdido o empatado.
-
 4. La presentacion con la anterior práctica ha cambiado bastante.
+
 -------------
  
 Escuela Técnica Superior de Ingeniería Informática  
