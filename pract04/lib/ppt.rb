@@ -30,7 +30,7 @@ module RockPaperScissors
           "Mala Suerte => #{computer_throw} gana a #{player_throw}"
         end
 
-      engine = Haml::Engine.new File.open("views/index2.haml").read
+      engine = Haml::Engine.new File.open("views/index3.haml").read
       res = Rack::Response.new
       res.write engine.render({}, 
         :answer => answer, 

@@ -5,7 +5,7 @@
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %meta{content: "", name: "description"}/
     %meta{content: "", name: "author"}/
-    %link{href: "/public/images/favicon.png", rel: "shortcut icon"}/
+    %link{href: "../../assets/ico/favicon.png", rel: "shortcut icon"}/
     %title Juego - PPT
     / Bootstrap core CSS
     %link{href: "/public/assets/css/bootstrap.min.css", rel: "stylesheet"}/
@@ -23,11 +23,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{href: "#"} Juego-PPT
+          %a.navbar-brand{href: "#"} Juego - PPT
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.active
-              %a{href: "#"} El Juego
+              %a{href: "#"} Juego
             %li
               %a{href: "#about"} Reglas
         / /.nav-collapse
@@ -35,42 +35,55 @@
     / /.navbar
     .container
       .row.row-offcanvas.row-offcanvas-right
-        .col-xs-12.col-sm-9
+        .col-xs-12.col-sm-8
           %p.pull-right.visible-xs
             %button.btn.btn-primary.btn-xs{"data-toggle" => "offcanvas", type: "button"} Toggle nav
           .jumbotron
-            %h2 Bienvenido a: Piedra, Papel o Tijera!
-            %p This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.
-
+            %h2 Bienvenido a, PIEDRA, PAPEL O TIJERA!
+            %p Piedra, papel o tijera es un juego infantil conocido también como cachipún, jankenpón, etc. Es un juego de manos en el cual existen tres elementos. La piedra que vence a la tijera rompiéndola; la tijera que vencen al papel cortándolo; y el papel que vence a la piedra envolviéndola.
           .row
             .col-6.col-sm-6.col-lg-4
-              %img.img-rounded{alt: "Piedra", src: "/public/images/piedra.png"}/
+              %center
+                %img.img-rounded{alt: "Piedra", src: "/public/images/piedra.png"}/
               %br
-              %p
-                %a.btn.btn-default{href: "#"} Elegir Piedra »
+              %br
+              %center
+                %a.btn.btn-default{:href => "?choice=roca"} Elegir Piedra »
             / /span
 
             .col-6.col-sm-6.col-lg-4
-              %img.img-rounded{alt: "Papel", src: "/public/images/papel.png"}/
+              %center
+                %img.img-rounded{alt: "Papel", src: "/public/images/papel.png"}/
               %br
-              %p
-                %a.btn.btn-default{href: "#"} Elegir Papel »
+              %br
+              %center
+                %a.btn.btn-default{:href => "?choice=papel"} Elegir Papel »
             / /span
 
             .col-6.col-sm-6.col-lg-4
-              %img.img-rounded{alt: "Tijeras", src: "/public/images/tijeras.png"}/
+              %center
+                %img.img-rounded{alt: "Tijeras", src: "/public/images/tijeras.png"}/
               %br
-              %p
-                %a.btn.btn-default{href: "#"} Elegir Tijeras »
-            / /span
-          / /span
+              %br
+              %center
+                %a.btn.btn-default{:href => "?choice=tijeras"} Elegir Tijeras »
 
-      #sidebar.col-xs-6.col-sm-3.sidebar-offcanvas{role: "navigation"}
-        .well.sidebar-nav
-          %ul.nav
-            %li.active
-              %center= answer
-
+        #sidebar.col-xs-6.col-sm-4.sidebar-offcanvas{role: "navigation"}
+          .well.sidebar-nav
+            %center 
+              %h2 Resultado:
+            %br
+            %br
+            %ul.nav
+              %center
+                %h2= answer
+            %br
+            %br
+            %br
+            %br
+          / /.well
+        / /span
+      / /row
       %hr/
       %footer
         %p © Company 2013
@@ -79,6 +92,6 @@
       Bootstrap core JavaScript
       \==================================================
     / Placed at the end of the document so the pages load faster
-    %script{src: "/public/assets/js/assets/js/jquery.js"}
-    %script{src: "/public/assets/js/dist/js/bootstrap.min.js"}
-    %script{src: "/public/assets/js/ offcanvas.js"}
+    %script{src: "/public/assets/js/jquery.js"}
+    %script{src: "/public/assets/js/bootstrap.min.js"}
+    %script{src: "/public/assets/js/offcanvas.js"}
