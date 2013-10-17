@@ -6,7 +6,7 @@
     %meta{content: "", name: "description"}/
     %meta{content: "", name: "author"}/
     %link{href: "/public/images/favicon.png", rel: "shortcut icon"}/
-    %title Off Canvas Template for Bootstrap
+    %title Juego - PPT
     / Bootstrap core CSS
     %link{href: "/public/assets/css/bootstrap.min.css", rel: "stylesheet"}/
     / Custom styles for this template
@@ -34,35 +34,34 @@
       / /.container
     / /.navbar
     .container
-      .col-xs-12.col-sm-12
-        %p.pull-right.visible-xs
-          %button.btn.btn-primary.btn-xs{"data-toggle" => "offcanvas", type: "button"} Toggle nav
-        .jumbotron
-          %h1 Bienvenido: Piedra, Papel o Tijera!
-          %p Piedra, papel o tijera es un juego infantil conocido también como cachipún, jankenpón, etc. Es un juego de manos en el cual existen tres elementos: la piedra, el papel y la tijera.
-        .col-6.col-sm-6.col-lg-4
-          %h2 Heading
-          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      %p.pull-right.visible-xs
+        %button.btn.btn-primary.btn-xs{"data-toggle" => "offcanvas", type: "button"} Toggle nav
+      .jumbotron
+        %h2 Bienvenido a: Piedra, Papel o Tijera!
+        %p This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.
+
+      .col-6.col-lg-4
+        %img.img-rounded{alt: "Piedra", src: "/public/images/piedra.png"}/
+        %br
           %p
-            %a.btn.btn-default{href: "#"} View details »
-        / /span
-        .col-6.col-sm-6.col-lg-4
-          %h2 Heading
-          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            %a.btn.btn-default{href: "#"} Elegir Piedra »
+      / /span
+      .col-6.col-lg-4
+        %img.img-rounded{alt: "Papel", src: "/public/images/papel.png"}/
+        %br
           %p
-            %a.btn.btn-default{href: "#"} View details »
-        / /span
-        .col-6.col-sm-6.col-lg-4
-          %h2 Heading
-          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            %a.btn.btn-default{href: "#"} Elegir Papel »
+      / /span
+      .col-6.col-lg-4
+        %img.img-rounded{alt: "Tijeras", src: "/public/images/tijeras.png"}/
+        %br
           %p
-            %a.btn.btn-default{href: "#"} View details »
-        / /span
-        / /span
-      %hr/
+            %a.btn.btn-default{href: "#"} Elegir Tijeras »
+      / /span
+    / /span
+    %hr/
+    .container
       %footer
-        %br/
-        %br/
         %p © Company 2013
     / /.container
     /
