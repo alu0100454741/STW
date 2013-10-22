@@ -1,0 +1,26 @@
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html'}
+    %title PPT
+  %body
+    
+    %center
+      %h1 Bienvenido al Juego: "PIEDRA PAPEL O TIJERA"
+      %br
+      %table{border: "1", height: "100", width: "350"}
+        %td
+          %center= answer
+      %br
+      %h3 Elija uno de los siguientes:
+      %br
+      %a{:href => "?choice=roca"}
+        %img{alt: "piedra", hspace: "19", height: "100", border:"2", src: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rock-paper-scissors_(rock).png/70px-Rock-paper-scissors_(rock).png", width: "100"}/
+
+      %a{:href => "?choice=papel"}
+        %img{alt: "papel", hspace: "19", height: "100", border:"2", src: "http://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Rock-paper-scissors_(paper).png/70px-Rock-paper-scissors_(paper).png", width: "100"}/
+
+      %a{:href => "?choice=tijeras"}
+        %img{alt: "tijeras", hspace: "19", height: "100", border:"2", src: "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rock-paper-scissors_(scissors).png/70px-Rock-paper-scissors_(scissors).png", width: "100"}/
+
+
+      
