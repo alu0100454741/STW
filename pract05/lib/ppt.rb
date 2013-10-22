@@ -11,6 +11,7 @@ module RockPaperScissors
       @content_type = :html
       @defeat = {'roca' => 'tijeras', 'papel' => 'roca', 'tijeras' => 'papel'}
       @throws = @defeat.keys
+      @estadistica = {'empatar' => 0, 'ganar' => 0, 'perder' => 0}
     end
 
 
@@ -23,16 +24,23 @@ module RockPaperScissors
       answer = if !@throws.include?(player_throw)
         "Seleccione para Empezar"
         elsif player_throw == computer_throw
+          @estadistica['empatar'] = @estadistica['empatar'] + 1
           "Ha empatado con el Ordenador"
         elsif computer_throw == @defeat[player_throw]
+          @estadistica['ganar'] = @estadistica['ganar'] + 1
           "Bien Hecho => #{player_throw} gana a #{computer_throw}"
         else
+          @estadistica['perder'] = @estadistica['perder'] + 1
           "Mala Suerte => #{computer_throw} gana a #{player_throw}"
-        end
+        end 
 
       engine = Haml::Engine.new File.open("views/index3.haml").read
       res = Rack::Response.new
+
+      res.set_cookie("menaser89", {:value => @estadistica, :path => "/", :expires => Time.now+24*60*60})
+
       res.write engine.render({}, 
+        :estadistica => @estadistica,
         :answer => answer, 
         :throws => @throws,
         :player_throw => player_throw, 
