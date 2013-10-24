@@ -20,7 +20,7 @@ end
 
 desc "Ejecutar tests con Pruebas Unitarias"
 task :test do
-  sh "ruby -Ilib -Itest test/tc_rps.rb"
+  sh "ruby -Ilib -Itest test/tc_ppt.rb"
 end
 
 desc "Ejecutar tests rspec"

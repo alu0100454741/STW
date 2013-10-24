@@ -5,19 +5,19 @@ require 'haml'
 module RockPaperScissors
   class App
 
-    def set_env(env)
-      @env = env
-      @session = env['rack.session']
-    end
+    # def set_env(env)
+    #   @env = env
+    #   @session = env['rack.session']
+    # end
 
-    def some_key 
-      return @session['some_key'].to_i if @session['some_key']
-      @session['some_key'] = 0
-    end
+    # def some_key 
+    #   return @session['some_key'].to_i if @session['some_key']
+    #   @session['some_key'] = 0
+    # end
 
-    def some_key=(value)
-      @session['some_key'] = value
-    end
+    # def some_key=(value)
+    #   @session['some_key'] = value
+    # end
 
 
 #Iicializacion del entorno
@@ -55,7 +55,7 @@ module RockPaperScissors
       res = Rack::Response.new
 
       res.set_cookie("menaser89", {:value => @estadistica, :path => "/", :expires => Time.now+24*60*60})
-      self.some_key = self.some_key + 1 if req.path == '/'
+      #self.some_key = self.some_key + 1 if req.path == '/'
       #res.write("some_key = #{@session['some_key']}\n")
 
       res.write engine.render({}, 
