@@ -1,3 +1,4 @@
+#modulo para hacer las pruebas de RSPEC
 module Rsack
   class Server
     def call(env)
@@ -7,4 +8,4 @@ module Rsack
       response.finish
     end
   end
-end
+endS
