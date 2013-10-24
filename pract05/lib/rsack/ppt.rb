@@ -16,10 +16,24 @@ module RockPaperScissors
       @estadistica = {'empatar' => 0, 'ganar' => 0, 'perder' => 0}
     end
 
+    # def set_env(env)
+    #   @env = env
+    #   @session = env['rack.session']
+    # end
+
+    # def some_key 
+    #   return @session['some_key'].to_i if @session['some_key']
+    #   @session['some_key'] = 0
+    # end
+
+    # def some_key=(value)
+    #   @session['some_key'] = value
+    # end
+
 
 #Función que
     def call(env)
-
+      # set_env(env)
       req = Rack::Request.new(env)  
       # req.env.keys.sort.each { |x| puts "#{x} => #{req.env[x]}" }  
 
