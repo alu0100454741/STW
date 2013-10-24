@@ -18,12 +18,12 @@ class PPTTest < Test::Unit::TestCase
 
   def test_body
     get "/"
-    assert last_response.body.include? ("Bienvenido a Piedra Papel y Tijera")
+    assert last_response.body.include? ("Bienvenido a, PIEDRA, PAPEL O TIJERA!")
   end
   
   def test_title
     get "/"
-    assert_match "<title>Piedra-Papel-Tijera App</title>", last_response.body
+    assert_match "<title>Juego - PPT</title>", last_response.body
   end
 
   def test_rock
