@@ -1,4 +1,4 @@
-require './lib/ppt.rb'
+require './lib/rsack/ppt.rb'
 
 builder = Rack::Builder.new do
   use Rack::Static, :urls => ['/public']
