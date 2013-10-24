@@ -12,13 +12,13 @@ Instrucciones de Ejecución
 -------------
 1. Arrancamos el programa mediante Rake:
 
-        *$ rake -> Para ejecutar aplicacion
-        *$rake test -> Para ejecutar test Unitarios
-        *$rake spec -> Para ejecutar test rspec
+        * $ rake -> Para ejecutar aplicacion
+        * $rake test -> Para ejecutar test Unitarios
+        * $rake spec -> Para ejecutar test rspec
 
 2. Si elegimos la primera opcion, colocamos en un navegador la siguiente dirección:
 
-        *$ http://localhost:8080
+        * $ http://localhost:8080
 
 3. Seleccionamos una jugada y nos aparecera un mensaje de si hemos ganado, perdido o empatado.
 4. La presentacion con la anterior práctica ha cambiado bastante.
