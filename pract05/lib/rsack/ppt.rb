@@ -5,19 +5,6 @@ require 'haml'
 module RockPaperScissors
   class App
 
-    # def set_env(env)
-    #   @env = env
-    #   @session = env['rack.session']
-    # end
-
-    # def some_key 
-    #   return @session['some_key'].to_i if @session['some_key']
-    #   @session['some_key'] = 0
-    # end
-
-    # def some_key=(value)
-    #   @session['some_key'] = value
-    # end
 
 
 #Iicializacion del entorno
@@ -32,9 +19,9 @@ module RockPaperScissors
 
 #Función que
     def call(env)
-      set_env(env)
+
       req = Rack::Request.new(env)  
-      req.env.keys.sort.each { |x| puts "#{x} => #{req.env[x]}" }  
+      # req.env.keys.sort.each { |x| puts "#{x} => #{req.env[x]}" }  
 
       computer_throw = @throws.sample
       player_throw = req.GET["choice"]
