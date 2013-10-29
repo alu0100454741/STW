@@ -52,7 +52,7 @@ module RockPaperScissors
 
       engine = Haml::Engine.new File.open("views/index3.haml").read
       res = Rack::Response.new
-
+      
       self.some_key = self.some_key + 1 if req.path == '/'
       res.write engine.render({}, 
         :estadistica => @estadistica,

@@ -7,6 +7,7 @@ class PPTTest < Test::Unit::TestCase
 
   def app
     Rack::Builder.new do
+      use(Rack::Session::Cookie, {:key => 'rack.session', :secret => 'some_secret'})
       run RockPaperScissors::App.new
     end.to_app
   end

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe RockPaperScissors::App do
   #let(:server) { Rack::MockRequest.new(RockPaperScissors::App.new) }
   def server
-    Rack::MockRequest.new(RockPaperScissors::App.new)
+    Rack::MockRequest.new(Rack::Session::Cookie.new(RockPaperScissors::App.new, :key => 'rack.session', :secret => 'some_secret'))
   end
 
   context '/' do
