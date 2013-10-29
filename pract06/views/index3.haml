@@ -1,0 +1,104 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    %link{href: "../../assets/ico/favicon.png", rel: "shortcut icon"}/
+    %title Juego - PPT
+    / Bootstrap core CSS
+    %link{href: "/public/assets/css/bootstrap.min.css", rel: "stylesheet"}/
+    / Custom styles for this template
+    %link{href: "/public/assets/css/offcanvas.css", rel: "stylesheet"}/
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+  %body
+    .navbar.navbar-fixed-top.navbar-inverse{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "#"} Juego - PPT
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{href: "#"} Juego
+            %li
+              %a{href: "#about"} Reglas
+        / /.nav-collapse
+      / /.container
+    / /.navbar
+    .container
+      .row.row-offcanvas.row-offcanvas-right
+        .col-xs-12.col-sm-8
+          %p.pull-right.visible-xs
+            %button.btn.btn-primary.btn-xs{"data-toggle" => "offcanvas", type: "button"} Toggle nav
+          .jumbotron
+            %h2 Bienvenido a, PIEDRA, PAPEL O TIJERA!
+            %p Piedra, papel o tijera es un juego infantil conocido también como cachipún, jankenpón, etc. Es un juego de manos en el cual existen tres elementos. La piedra que vence a la tijera rompiéndola; la tijera que vencen al papel cortándolo; y el papel que vence a la piedra envolviéndola.
+          .row
+            .col-6.col-sm-6.col-lg-4
+              %center
+                %img.img-rounded{alt: "Piedra", src: "/public/images/piedra.png"}/
+              %br
+              %br
+              %center
+                %a.btn.btn-default{:href => "?choice=roca"} Elegir Piedra »
+            / /span
+
+            .col-6.col-sm-6.col-lg-4
+              %center
+                %img.img-rounded{alt: "Papel", src: "/public/images/papel.png"}/
+              %br
+              %br
+              %center
+                %a.btn.btn-default{:href => "?choice=papel"} Elegir Papel »
+            / /span
+
+            .col-6.col-sm-6.col-lg-4
+              %center
+                %img.img-rounded{alt: "Tijeras", src: "/public/images/tijeras.png"}/
+              %br
+              %br
+              %center
+                %a.btn.btn-default{:href => "?choice=tijeras"} Elegir Tijeras »
+
+        #sidebar.col-xs-6.col-sm-4.sidebar-offcanvas{role: "navigation"}
+          .well.sidebar-nav
+            %center 
+              %h2 Resultado:
+            %br
+            %br
+            %ul.nav
+              %center
+                %h2= answer
+            %br
+            %h3 
+              Victorias:
+              = estadistica['ganar']
+            %h3 
+              Perdidas:
+              = estadistica['perder'] 
+            %h3 
+              Empates: 
+              = estadistica['empatar']
+            %br
+          / /.well
+        / /span
+      / /row
+      %hr/
+      %footer
+        %p © Company 2013
+    / /.container
+    /
+      Bootstrap core JavaScript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{src: "/public/assets/js/jquery.js"}
+    %script{src: "/public/assets/js/bootstrap.min.js"}
+    %script{src: "/public/assets/js/offcanvas.js"}
