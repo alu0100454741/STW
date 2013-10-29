@@ -5,8 +5,19 @@ require 'haml'
 module RockPaperScissors
   class App
 
-    # def set_env(env)
+    def set_env(env)
+      @env = env
+      @session = env['rack.session']
+    end
 
+    def some_key 
+      return @session['some_key'].to_i if @session['some_key']
+      @session['some_key'] = 0
+    end
+
+    def some_key=(value)
+      @session['some_key'] = value
+    end
 
 #Iicializacion del entorno
     def initialize(app = nil)
