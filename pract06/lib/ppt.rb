@@ -57,6 +57,7 @@ module RockPaperScissors
       # self.some_key = self.some_key + 1 if req.path == '/'
       #res.write("some_key = #{@session['some_key']}\n")
       self.some_key = self.some_key + 1 if req.path == '/'
+
       res.write("some_key = #{@session['some_key']}\n")
 
       res.write engine.render({}, 
