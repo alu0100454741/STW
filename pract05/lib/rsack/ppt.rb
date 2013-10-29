@@ -6,7 +6,6 @@ module RockPaperScissors
   class App
 
 
-
 #Iicializacion del entorno
     def initialize(app = nil)
       @app = app

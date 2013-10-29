@@ -19,6 +19,12 @@ describe RockPaperScissors::App do
       response.body == 'Bienvenido a, PIEDRA, PAPEL O TIJERA!'
     end
 
+    # it "deberia" do
+    #   @prueba.defeat['roca'].should == 'tijeras'
+    #   # @frac1.numerador.should_not == 8
+
+    # end
+
     # it "Test de empatado" do
 
     #   computer_throw = @throws.sample

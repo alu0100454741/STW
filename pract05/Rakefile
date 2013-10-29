@@ -25,5 +25,5 @@ end
 
 desc "Ejecutar tests rspec"
 task :spec do
-  sh "rspec -Ilib -Ispec spec/rsack/server_spec.rb"
+  sh "rspec --format d -Ilib -Ispec spec/rsack/server_spec.rb"
 end
