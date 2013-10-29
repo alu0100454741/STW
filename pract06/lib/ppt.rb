@@ -31,6 +31,7 @@ module RockPaperScissors
 
 #Función que
     def call(env)
+      set_env(env)
       req = Rack::Request.new(env)  
       req.env.keys.sort.each { |x| puts "#{x} => #{req.env[x]}" }  
 
@@ -52,9 +53,11 @@ module RockPaperScissors
       engine = Haml::Engine.new File.open("views/index3.haml").read
       res = Rack::Response.new
 
-      res.set_cookie("menaser89", {:value => @estadistica, :path => "/", :expires => Time.now+24*60*60})
-      self.some_key = self.some_key + 1 if req.path == '/'
+      # res.set_cookie("menaser89", {:value => @estadistica, :path => "/", :expires => Time.now+24*60*60})
+      # self.some_key = self.some_key + 1 if req.path == '/'
       #res.write("some_key = #{@session['some_key']}\n")
+      self.some_key = self.some_key + 1 if req.path == '/'
+      res.write("some_key = #{@session['some_key']}\n")
 
       res.write engine.render({}, 
         :estadistica => @estadistica,
