@@ -1,11 +1,13 @@
 require 'sinatra'
 require 'sass'
 require 'pp'
+require './usuarios.rb'
+require 'haml'
 
 settings.port = ENV['PORT'] || 4567
 #enable :sessions
 use Rack::Session::Pool, :expire_after => 2592000
-#set :session_secret, 'super secret'
+set :session_secret, 'super secret'
 
 #configure :development, :test do
 #  set :sessions, :domain => 'example.com'
@@ -14,6 +16,17 @@ use Rack::Session::Pool, :expire_after => 2592000
 #configure :production do
 #  set :sessions, :domain => 'herokuapp.com'
 #end
+
+configure :development do
+  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+end
+
+configure :production do
+  DataMapper.setup(:default, ENV['DATABASE_URL'])
+end
+
+#DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+DataMapper.auto_upgrade!
 
 module TicTacToe
   HUMAN = CIRCLE = "circle" # human
@@ -36,6 +49,10 @@ module TicTacToe
       @board[k] = BLANK
     end
     @board
+  end
+
+  def usuario
+    session["usuario"]
   end
 
   def board
@@ -148,7 +165,7 @@ get %r{^/([abc][123])?$} do |human|
   else
     session["bs"] = inicializa()
     puts "session = "
-    pp session
+    p session
   end
   haml :game, :locals => { :b => board, :m => ''  }
 end
@@ -158,6 +175,15 @@ get '/humanwins' do
   pp session
   begin
     m = if human_wins? then
+          if (session["usuario"] != nil)
+            un_usuario = Usuario.first(:username => session["usuario"])
+            contador = un_usuario.partidas_ganadas
+            contador = contador + 1
+            un_usuario.partidas_ganadas = contador
+            un_usuario.save
+            pp un_usuario
+            p "---------"
+          end
           'Human wins'
         else 
           redirect '/'
@@ -173,6 +199,14 @@ get '/computerwins' do
   pp session
   begin
     m = if computer_wins? then
+          #agregar un loose a la base de datos
+          if (session["usuario"] != nil)
+            un_usuario = Usuario.first(:username => session["usuario"])
+            contador = un_usuario.partidas_perdidas
+            contador = contador + 1
+            un_usuario.partidas_perdidas = contador
+            un_usuario.save
+          end
           'Computer wins'
         else 
           redirect '/'
@@ -181,6 +215,34 @@ get '/computerwins' do
   rescue
     redirect '/'
   end
+end
+
+post '/' do
+  if params[:logout]
+    @usuario = nil
+    session["usuario"] = nil
+    session.clear
+  else
+    nick = params[:usuario]
+    nick = nick["username"]
+    u = Usuario.first(:username => "#{nick}" )
+    if u == nil
+      usuario = Usuario.create(params[:usuario])
+      usuario.save
+      Ejem = params[:usuario]
+      pp params[:usuario]
+      @usuario = Ejem["username"]
+      p "ATENCION!!!!!!!!"
+      pp @usuario
+      session["usuario"] = @usuario
+    else
+      p "Ya existe un usuario con ese nick!"
+      @usuario = nil
+      session["usuario"] = nil
+      session.clear
+    end
+  end
+    redirect '/'
 end
 
 not_found do
